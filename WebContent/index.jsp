@@ -14,7 +14,9 @@
 	crossorigin="anonymous">
 </head>
 <body>
-	<div class="container">
+
+
+	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-6 offset-2">
 				<div class="card" style="background-color: #f6f6f6;">
@@ -44,6 +46,9 @@
 							</div>
 							<div class="card-footer"
 								style="margin-left: 0px; padding-left: 0px;">
+								<c:if test="${sessionScope.startIndex lt 3 }">
+									
+								</c:if>
 								<input type="submit" class="btn btn-primary" value="Next"
 									name="btn" />
 							</div>

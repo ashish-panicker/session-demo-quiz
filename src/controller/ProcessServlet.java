@@ -41,13 +41,17 @@ public class ProcessServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		int startIndex = Integer.parseInt(request.getSession().getAttribute("startIndex").toString());
 		int endIndex = Integer.parseInt(request.getSession().getAttribute("endIndex").toString());
+		
 		char selectedAnswer = request.getParameter("answer").trim().charAt(0);
 		System.out.println("Selected answer "  + selectedAnswer);
 		
 		Question q = ((ArrayList<Question>) request.getSession().getAttribute("questions")).get(startIndex);
 		q.setSelectedAnswer(selectedAnswer);
+		
 		((ArrayList<Question>) request.getSession().getAttribute("questions")).set(startIndex, q);
+		
 		System.out.println(((ArrayList<Question>) request.getSession().getAttribute("questions")).set(startIndex, q).getAsnwer());
+		
 		++startIndex;
 		if (startIndex > endIndex) {
 			startIndex = 0;

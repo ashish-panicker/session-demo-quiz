@@ -40,6 +40,7 @@ public class InitServlet extends HttpServlet {
 		questions.add(new Question(1, "question 4", "optionA", "optionB", "optionC", "optionD", 'd'));
 
 		request.getSession().setAttribute("questions", questions);
+		
 		request.getSession().setAttribute("startIndex", 0);
 		request.getSession().setAttribute("endIndex", questions.size() - 1);
 		
